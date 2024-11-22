@@ -12,7 +12,7 @@
 Clonar Repostorio: git clone <url_repo>
 ```
 ```yml
-Instalar Dependencias: composer install
+Instalar Dependencias: composer require
 ```
 
 ## Configuración
