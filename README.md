@@ -12,7 +12,9 @@
 Clonar Repostorio: git clone <project>
 ```
 ```yml
-Instalar Dependencias: composer require <dependency>
+Añadir Dependencias: composer require <dependency>
+Instalar Dependencias: composer install
+Actualizar Proyecto: composer dump-autoload
 ```
 
 ## Configuración
