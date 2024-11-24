@@ -19,9 +19,6 @@ Instalar Dependencias: composer require <dependency>
 ```yml
 Environment: composer require vlucas/phpdotenv
 ```
-```yml
-UUID: composer require ramsey/uuid
-```
 
 ## Variables Entorno
 ```yml
