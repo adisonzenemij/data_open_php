@@ -9,15 +9,27 @@
 
 ## Instalación
 ```yml
-Clonar Repostorio: git clone <url_repo>
+Clonar Repostorio: git clone <project>
 ```
 ```yml
-Instalar Dependencias: composer require
+Instalar Dependencias: composer require <dependency>
 ```
 
 ## Configuración
 ```yml
-composer require vlucas/phpdotenv
+Environment: composer require vlucas/phpdotenv
+```
+```yml
+UUID: composer require ramsey/uuid
+```
+
+## Variables Entorno
+```yml
+### Configuración Básica ###
+APP_PROJECT: Nombre del proyecto
+APP_FRAMEWORK: Framework utilizado [none | other]
+APP_VERSION: Versión de la aplicación
+APP_DEBUG: Depuración activada [true | false]
 ```
 
 ## Páginas Oficiales

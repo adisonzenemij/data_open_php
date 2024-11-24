@@ -32,3 +32,4 @@
             require_once TMPL . '/final.php';
         }
     }
+?>

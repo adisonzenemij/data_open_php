@@ -4,7 +4,9 @@
     class Router {
         private $routes = [];
 
+        # Agregar nueva ruta al sistema de enrutamiento
         public function addRoute($method, $path, $controller, $action) {
+            # Asignar el controlador y la acción a la ruta especificada
             $this->routes[$method][$path] = [$controller, $action];
         }
 
@@ -32,3 +34,4 @@
             }
         }
     }
+?>

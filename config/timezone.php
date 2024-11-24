@@ -14,3 +14,4 @@
     define('TZ_DN', date('Ymd'));
     # Fecha actual en el aplicativo
     define('TZ_HR', date('His'));
+?>

@@ -5,3 +5,4 @@
     require 'define.php';
     require 'timezone.php';
     require 'file.php';
+?>

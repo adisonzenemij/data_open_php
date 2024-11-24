@@ -1,6 +1,6 @@
 <?php
     # Ruta del archivo de variables de entorno
-    define('ENVS', DIR_STRG . '/envs');
+    define('ENVS', DIR . '/envs');
     define('ENV_PRDT', ENVS . '/.env');
     define('ENV_BCKP', ENVS . '/.env.dist');
 
@@ -9,3 +9,4 @@
         # Crear una copia del archivo de respaldo
         copy(ENV_BCKP, ENV_PRDT);
     }
+?>

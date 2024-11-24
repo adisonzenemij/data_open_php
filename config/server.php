@@ -1,4 +1,4 @@
-<?php    
+<?php
     # Ruta de directorios MIB (Management Information Base)
     if (isset($_SERVER['MIBDIRS'])) { define('MIBDIRS', $_SERVER['MIBDIRS']); }
     # Directorio donde está instalado MySQL
@@ -155,3 +155,4 @@
     define('CURRENT_PATH', $currentPath);
     # Combinar la URL base con la ruta actual y definir la constante APP_URL
     define('APP_URL', $serverUrl . $currentPath);
+?>

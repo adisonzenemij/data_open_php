@@ -1,1 +1,1 @@
-console.log('lab arcgis php');
+console.log('application test');

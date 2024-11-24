@@ -1,7 +1,7 @@
 <?php
     namespace App\Core;
 
-    use App\Controllers\MainController as ctrMain;
+    use App\Controller\MainController as ctrMain;
 
     class Load {
         private $router;
@@ -31,3 +31,4 @@
             );
         }
     }
+?>

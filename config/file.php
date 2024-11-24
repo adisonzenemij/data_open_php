@@ -7,3 +7,4 @@
     $folderRoot = str_replace('/' . $fileIndex, '', SCRIPT_NAME);
     # Definir constante para ruta del proyecto
     define('FOLDER_ROOT', $folderRoot);
+?>
