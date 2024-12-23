@@ -12,17 +12,31 @@
             extract($data);
             # Cargar archivos en la plantilla final
             require_once TMPL . '/doctype.php';
-            # Recorrer las diferentes plantillas
+            require_once TMPL . '/navbar.php';
+            # Recorrer las plantillas
             foreach ($templates as $template) {
-                # Definir la ruta base de las plantillas
-                $tmplPath = VIEW . '/' . $template . '.php';
-                # Verificar si la plantilla existe
-                if (file_exists($tmplPath)) {
-                    require_once $tmplPath;
-                } else {
+                # Definir las posibles rutas para las plantillas
+                $tmplPaths = [
+                    VIEW . '/' . $template . '.php',
+                    VIEW . '/' . $template . '.html'
+                ];
+
+                # Verificar si las plantillas existen
+                $templateFound = false;
+                foreach ($tmplPaths as $path) {
+                    if (file_exists($path)) {
+                        require_once $path;
+                        $templateFound = true;
+                        # Salir del ciclo
+                        break;
+                    }
+                }
+
+                # Cuando no encuentre ninguna plantilla 404
+                if (!$templateFound) {
                     http_response_code(404);
                     echo "404 Not Found: Template '$template' not found.";
-                    # Terminar ejecucion
+                    # Terminar ejecución
                     return;
                 }
             }

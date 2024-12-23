@@ -10,7 +10,7 @@
             # Cargar datos si es necesario
             $data = ['title' => 'test',];
             # Cargar las diferentes plantillas
-            $templates = ['main'];
+            $templates = ['main','filter','field'];
             # Renderiar plantilla y configuracion
             Render::view($templates, $data);
         }

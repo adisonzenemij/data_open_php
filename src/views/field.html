@@ -1,0 +1,43 @@
+<form aria-label="Formulario Datos Campos" class="form-horizontal needs-validation was-validated"
+enctype="application/x-www-form-urlencoded" id="fieldForm" novalidate="">
+  <div class="modal fade" id="fieldModal" tabindex="-1" aria-labelledby="fieldLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-0">
+        <div class="modal-header rounded-0 bg-primary">
+          <h5 class="modal-title fs-5" id="fieldLabel">
+            <span class="text-white">
+              Campos
+            </span>
+          </h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12 mb-2">
+              <div class="card rounded-0">
+                <div class="card-body">
+                  <table class="text-center table table-bordered table-sm table-hover table-striped w-100 nowrap" id="dt_field">
+                    <caption class="d-none text-center caption-top">
+                      <span>Informacion Datos</span>
+                    </caption>
+                    <thead class="table-success">
+                      <tr id="table_thead_tr" class="table_thead_tr">
+                        <th scope="col">Reemplazar</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark rounded-0"
+            data-bs-dismiss="modal" onclick="modalAction('close', 'fieldModal');">
+              <span>Cerrar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

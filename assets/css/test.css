@@ -1,21 +1,28 @@
 html,
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #viewDiv {
-    /*padding: 0;
-    margin: 0;*/
-    height: 75%;
-    width: 100%;
+  height: 75%;
+  width: 100%;
 }
 
 #tableDiv {
-    /*padding: 0;
-    margin: 0;*/
-    height: 25%;
-    width: 100%;
+  height: 25%;
+  width: 100%;
+}
+
+.caption-top {
+  caption-side: top;
+}
+
+.btn-xs {
+  padding: 0.25rem 0.5rem;    /* Reducir el padding vertical y horizontal */
+  font-size: 0.75rem;         /* Reducir el tamaño de fuente */
+  line-height: 1;             /* Ajustar la altura de línea */
+  border-radius: 0.2rem;      /* Bordes redondeados pequeños */
 }

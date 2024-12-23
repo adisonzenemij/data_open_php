@@ -1,0 +1,125 @@
+<form aria-label="Formulario Filtrar Datos" class="form-horizontal needs-validation was-validated"
+enctype="application/x-www-form-urlencoded" id="filterForm" novalidate="">
+  <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-0">
+        <div class="modal-header rounded-0 bg-primary">
+          <h5 class="modal-title fs-5" id="filterLabel">
+            <span class="text-white">
+              Filtrar Informacion
+            </span>
+          </h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-4 mb-2">
+              <div class="card rounded-0">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="filterField" class="form-label">
+                      <span>Campos:</span>
+                      <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group input-group-sm">
+                      <select name="filterField" id="filterField"
+                      class="form-control rounded-0"
+                      disabled="false" readonly="false">
+                        <option value="">Ninguno</option>
+                      </select>
+                      <button type="button"
+                      class="btn btn-dark rounded-0"
+                      onclick="socrataField();">
+                        <span>Seleccionar</span>
+                      </button>
+                      <button type="button"
+                      class="btn btn-danger rounded-0"
+                      onclick="fieldClean();">
+                        <span>Limpiar</span>
+                      </button>
+                      <div class="invalid-feedback">
+                        <span>Selecciona un valor de la lista.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 mb-2">
+              <div class="card rounded-0">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="filterCond" class="form-label">
+                      <span>Condiciones:</span>
+                      <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group input-group-sm">
+                      <select name="filterCond" id="filterCond" class="form-control rounded-0">
+                        <option value="">Seleccionar</option>
+                        <option value="=">Igual (=)</option>
+                        <option value="!=">Diferente (!=)</option>
+                        <option value="LIKE">Contiene (LIKE)</option>
+                        <option value="%LIKE">Comienza Con (LIKE)</option>
+                        <option value="LIKE%">Termina en (LIKE)</option>
+                        <option value="<">Menor Que (<)</option>
+                        <option value=">">Mayor Que (>)</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        <span>Selecciona un valor de la lista.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 mb-2">
+              <div class="card rounded-0">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="filterValue" class="form-label">
+                      <span>Valor:</span>
+                      <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group input-group-sm">
+                      <input type="text" name="filterValue" id="filterValue" class="form-control rounded-0">
+                      <div class="invalid-feedback">
+                        <span>Digita un valor en el campo.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-2">
+              <div class="card rounded-0">
+                <div class="card-body">
+                  <table class="text-center table table-bordered table-sm table-hover table-striped w-100 nowrap" id="dt_filter">
+                    <caption class="d-none text-center caption-top">
+                      <span>Informacion Datos</span>
+                    </caption>
+                    <thead class="table-success">
+                      <tr id="table_thead_tr" class="table_thead_tr">
+                        <th scope="col">Reemplazar</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary rounded-0" onclick="socrataFilter();">
+              <span>Añadir</span>
+            </button>
+            <button type="button" class="btn btn-primary rounded-0" onclick="filterApply();">
+              <span>Aplicar</span>
+            </button>
+            <button type="button" class="btn btn-dark rounded-0" data-bs-dismiss="modal">
+              <span>Cerrar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

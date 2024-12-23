@@ -1,0 +1,71 @@
+# Configuración Raiz
+root = true
+
+# Configuración Global
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_lenght=100
+trim_trailing_whitespace = true
+
+# Reglas Varios Archivos
+[*.{js,ts,html,css,php}]
+indent_size = 2
+indent_style = space
+
+# Reglas Archivos PHP
+[*.php]
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+
+# Reglas Archivos JavaScript
+[*.js]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+
+# Reglas Archivos JSON
+[*.json]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+
+# Reglas Archivos CSS
+[*.css]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+
+# Reglas Archivos HTML
+[*.html]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+
+# Reglas Archivos TypeScript
+[*.ts]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+
+# Reglas Archivo MD
+[*.md]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = false
+
+# Reglas Archivo Yaml
+[*.{yml,yaml}]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+
+# Reglas Archivo htaccess
+[.htaccess]
+charset = utf-8
+insert_final_newline = false
+trim_trailing_whitespace = false
