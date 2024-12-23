@@ -111,6 +111,7 @@ function dataDoom() {
 }
 
 function serviceLoad(column, whereClause) {
+  let limitValue = parseInt(strgGet(strgLimit)) || 0;
   let whereAdd = '';
   if (whereClause !== '') {
     whereAdd = `AND ${whereClause}`;
@@ -125,7 +126,7 @@ function serviceLoad(column, whereClause) {
       '$$app_token' : tokenPublic,
       '$select': '*',
       '$where': socWhere() + ' ' + whereAdd + ' ' + soOrderBy(),
-      '$limit' : 100,
+      '$limit' : limitValue,
       '$offset': 0,
     },
   }).done(function(data) {

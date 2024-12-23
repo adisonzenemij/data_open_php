@@ -1,0 +1,52 @@
+<form aria-label="Formulario Filtrar Datos" class="form-horizontal needs-validation was-validated"
+enctype="application/x-www-form-urlencoded" id="configForm" novalidate="">
+  <div class="modal fade" id="configModal" tabindex="-1" aria-labelledby="configLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-0">
+        <div class="modal-header rounded-0 bg-primary">
+          <h5 class="modal-title fs-5" id="configLabel">
+            <span class="text-white">
+              Configuracion
+            </span>
+          </h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-4 mb-2">
+              <div class="card rounded-0">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="configLimit" class="form-label">
+                      <span>Registros:</span>
+                      <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group input-group-sm">
+                      <input type="number" name="configLimit" id="configLimit" class="form-control rounded-0">
+                      <button type="button"
+                      class="btn btn-danger rounded-0"
+                      onclick="configDefault();">
+                        <span>Por Defecto</span>
+                      </button>
+                      <div class="invalid-feedback">
+                        <span>Digita un valor en el campo.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary rounded-0" onclick="configApply();">
+              <span>Aplicar</span>
+            </button>
+            <button type="button" class="btn btn-dark rounded-0" data-bs-dismiss="modal">
+              <span>Cerrar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

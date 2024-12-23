@@ -95,3 +95,13 @@ function modalRemove() {
   let className = 'modal-backdrop';
   $(`.${className}`).remove();
 }
+
+function elementId(response) {
+  if (!response || typeof response !== 'string') {
+    console.error('Invalid response: Must be a non-empty string.');
+    return null;
+  }
+
+  return document.getElementById(response);
+}
+

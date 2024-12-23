@@ -4,6 +4,7 @@
     let appDebug = "<?= $_ENV['APP_DEBUG']; ?>";
     let tokenPublic = "<?= $_ENV['TOKEN_PUBLIC']; ?>";
     let strgFilter = "<?= $_ENV['STRG_FILTER']; ?>";
+    let strgLimit = "<?= $_ENV['STRG_LIMIT']; ?>";
     if (appDebug) { console.log(`appUrl: ${appUrl}`); }
     if (appDebug) { console.log(`tokenPublic: ${tokenPublic}`); }
     var libTableInfo = '';
@@ -19,10 +20,12 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!--Archivos Adicionales-->
 <script src="<?= AJS . '/test.js'; ?>"></script>
+<script src="<?= AJS . '/storage.js'; ?>"></script>
 <script src="<?= AJS . '/general.js'; ?>"></script>
 <script src="<?= AJS . '/height.js'; ?>"></script>
 <script src="<?= AJS . '/sweet.js'; ?>"></script>
 <script src="<?= AJS . '/table.js'; ?>"></script>
+<script src="<?= AJS . '/config.js'; ?>"></script>
 <script src="<?= AJS . '/filter.js'; ?>"></script>
 <script src="<?= AJS . '/field.js'; ?>"></script>
 <script src="<?= AJS . '/socrata.js'; ?>"></script>
