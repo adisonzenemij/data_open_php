@@ -12,6 +12,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a href="#" class="nav-link active"
+                onclick="modalAction('open', 'configModal');"
+                aria-current="page">
+                    <span class=" text-white">
+                        Configuracion
+                    </span>
+                </a>
+                <a href="#" class="nav-link active"
                 onclick="modalAction('open', 'filterModal');"
                 aria-current="page">
                     <span class=" text-white">
