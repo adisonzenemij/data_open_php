@@ -23,6 +23,6 @@
 <script src="<?= AJS . '/height.js'; ?>"></script>
 <script src="<?= AJS . '/sweet.js'; ?>"></script>
 <script src="<?= AJS . '/table.js'; ?>"></script>
-<script src="<?= AJS . '/socrata.js'; ?>"></script>
 <script src="<?= AJS . '/filter.js'; ?>"></script>
 <script src="<?= AJS . '/field.js'; ?>"></script>
+<script src="<?= AJS . '/socrata.js'; ?>"></script>

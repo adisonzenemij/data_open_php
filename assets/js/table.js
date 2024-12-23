@@ -106,7 +106,6 @@ function tableData(reference, doomConfig, dataApi, columnSet, definition, button
 
 // Generar dinámicamente la estructura
 function tableDoom(option) {
-  console.log('option', option);
   return `
     <'row mb-1'
       ${doomButton(option.find(item => item.button) || null)}
@@ -192,7 +191,6 @@ function doomRegister(config) {
 }
 
 function doomSearch(config) {
-  console.log('config', config);
   if (!config) return '';
   return `
     <'col-xs-${config.xs} col-sm-${config.sm} col-md-${config.md} col-lg-${config.lg} col-xl-${config.xl} align-items-center text-center'

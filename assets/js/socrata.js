@@ -1,4 +1,18 @@
-serviceVerify('');
+serviceStrg();
+
+function serviceStrg() {
+  console.log('serviceStrg');
+  let storage = localStorage.getItem(strgFilter);
+  if (storage) {
+    let dataApi = JSON.parse(storage);
+    if (dataApi.length == 0) {
+      serviceVerify('');
+    }
+    if (dataApi.length > 0) {
+      filterApply();
+    }
+  }
+}
 
 let columnService;
 
@@ -22,7 +36,6 @@ function serviceVerify(whereCluase) {
     let colExct = colExtract(columnService);
     serviceLoad(colExct, whereCluase);
   }).fail(function(jqXHR, textStatus) {
-    swwetClose();
     swwetService();
     if (appDebug) {
       console.error(`Servicio Inaccesible`);
@@ -149,7 +162,6 @@ function serviceLoad(column, whereClause) {
       );
     }, 500);
   }).fail(function(jqXHR, textStatus) {
-    swwetClose();
     swwetService();
     if (appDebug) {
       console.error(`Servicio Inaccesible`);

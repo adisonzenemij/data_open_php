@@ -3,7 +3,7 @@ heightInitial();
 function heightInitial() {
   // Capturar la altura actual del navegador
   const initialWindowHeight = window.innerHeight;
-  console.log('altura inicial:', initialWindowHeight, 'px');
+  console.log('height initial:', initialWindowHeight, 'px');
 
   // Almacenar valor en una variable global
   window.appHeight = initialWindowHeight;
@@ -20,7 +20,7 @@ function showHeight() {
 window.addEventListener('resize', function() {
   // Actualizar la variable global con la nueva altura
   const newWindowHeight = window.innerHeight;
-  console.log('altura redimensionada:', newWindowHeight, 'px');
+  console.log('height resize:', newWindowHeight, 'px');
 
   // Actualizar el valor de la variable global
   window.appHeight = newWindowHeight;

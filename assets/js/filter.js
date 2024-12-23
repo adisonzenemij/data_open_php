@@ -20,14 +20,9 @@ function socrataFilter() {
   let formData = new FormData(form);
 
   // Obtener los valores de los campos del formulario
-  let filterField = document.getElementById('filterField').value; // Campo select "filterField"
-  let filterCond = formData.get('filterCond');   // Campo select "filterCond"
-  let filterValue = formData.get('filterValue'); // Campo input "filterValue"
-
-  // Imprimir los valores para verificar
-  console.log('filterField:', filterField);
-  console.log('filterCond:', filterCond);
-  console.log('filterValue:', filterValue);
+  let filterField = document.getElementById('filterField').value;
+  let filterCond = formData.get('filterCond');
+  let filterValue = formData.get('filterValue');
 
   // Validar los campos antes de continuar
   if (!filterValid(filterField, filterCond, filterValue)) {
@@ -136,48 +131,49 @@ function filterData(response) {
 }
 
 function filterDelete(response) {
-  console.log('response =>', response);
   // Recuperar los datos del almacenamiento
   let dataApi = JSON.parse(localStorage.getItem(strgFilter)) || [];
-
   // Filtrar el objeto con el id correspondiente
   let updatedData = dataApi.filter(item => item.id !== response);
-
   // Guardar los datos actualizados en el almacenamiento
   localStorage.setItem(strgFilter, JSON.stringify(updatedData));
-
   // Actualizar la tabla
   filterData();
 }
 
 function filterApply() {
   let storage = localStorage.getItem(strgFilter);
-  console.log('storage:', storage);
   let whereConditions = [];
-
   if (storage) {
     let dataApi = JSON.parse(storage);
-    console.log(dataApi);
+    if (dataApi.length > 0) {
+      // Construir la cadena de condiciones con 'AND'
+      dataApi.forEach(item => {
+        if (item.field && item.cond && item.value) {
+          // Si la condición es LIKE, añadir % antes y después del valor
+          if (item.cond.toUpperCase() === 'LIKE') {
+            item.value = `%${item.value}%`;  // Se agrega el % alrededor del valor
+          }
 
-    // Construir la cadena de condiciones con 'AND'
-    dataApi.forEach(item => {
-      if (item.field && item.cond && item.value) {
-        // Si la condición es LIKE, añadir % antes y después del valor
-        if (item.cond.toUpperCase() === 'LIKE') {
-          item.value = `%${item.value}%`;  // Se agrega el % alrededor del valor
+          // Se asume que el campo 'field' es el nombre del atributo, 'cond' es la condición y 'value' es el valor a comparar.
+          let condition = `${item.field} ${item.cond} '${item.value}'`;
+          whereConditions.push(condition);
         }
-
-        // Se asume que el campo 'field' es el nombre del atributo, 'cond' es la condición y 'value' es el valor a comparar.
-        let condition = `${item.field} ${item.cond} '${item.value}'`;
-        whereConditions.push(condition);
+      });
+      // Unir las condiciones con 'AND'
+      let whereClause = whereConditions.join(' AND ');
+      // Aplicar la condición al servicio
+      serviceVerify(whereClause);
+      let htmlName = 'filterModal';
+      let result = existsElement(htmlName);
+      if (htmlName && result) {
+        // Verificar si el modal está abierto
+        let modalElement = document.getElementById(htmlName);
+        if (modalElement && modalElement.classList.contains('show')) {
+          // Ejecutar la acción si el modal está abierto
+          modalAction('close', htmlName);
+        }
       }
-    });
-
-    // Unir las condiciones con 'AND'
-    let whereClause = whereConditions.join(' AND ');
-
-    // Aplicar la condición al servicio
-    serviceVerify(whereClause);
-    modalAction('close', 'filterModal');
+    }
   }
 }

@@ -38,7 +38,6 @@ function fieldData(response) {
     let cnfgDoom = fieldDoom();
 
     let dataApi = response.map(item => {
-      console.log('item =>', item);
       let format = item.property.split('_')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
         .join(' ');
@@ -78,7 +77,6 @@ function fieldData(response) {
 }
 
 function fieldSelect(response) {
-  console.log('response =>', response);
   Swal.fire({
     title: '¿Estás seguro?',
     text: 'Esta acción no se puede deshacer.',
@@ -101,7 +99,6 @@ function fieldSelect(response) {
 }
 
 function fieldAssign(response) {
-  console.log('response =>', response);
   let htmlName = 'filterField';
   let result = existsElement(htmlName);
   if (htmlName && result) {
