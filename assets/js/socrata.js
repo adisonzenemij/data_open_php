@@ -3,8 +3,10 @@ serviceStrg();
 function serviceStrg() {
   console.log('serviceStrg');
   let storage = localStorage.getItem(strgFilter);
+  if (!storage) { serviceVerify(''); }
   if (storage) {
     let dataApi = JSON.parse(storage);
+    console.log('dataApi', dataApi);
     if (dataApi.length == 0) {
       serviceVerify('');
     }
@@ -185,6 +187,8 @@ function propertySkip() {
     'fecha_de_recepcion_de',
     'fecha_de_apertura_de_respuesta',
     'fecha_de_apertura_efectiva',
+    'fecha_de_publicacion_fase_2',
     'fecha_de_publicacion_fase_3',
+    'fecha_adjudicacion',
   ];
 }

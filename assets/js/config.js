@@ -1,6 +1,6 @@
-configInitial();
-
 let configRecord = 2500;
+
+configInitial();
 
 function configInitial() {
   const storage = strgGet(strgLimit);
